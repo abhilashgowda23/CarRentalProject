@@ -36,16 +36,6 @@ class CarRentalSystem {
 
 	}
 
-	public void rentCar(Car car, Customer customer, int days) {
-		if (car.isAvailable()) {
-			car.rent();
-			rentalList.add(new Rental(car, customer, days));
-			System.out.println("Rented Successfully.. Thank you!!\n");
-		} else {
-			System.out.println("Car is not Available!!!! Pls try with other vehicle");
-		}
-	}
-
 	public void returnCar(Car car) {
 		car.returnCar();
 		Rental rentalToRemove = null;
