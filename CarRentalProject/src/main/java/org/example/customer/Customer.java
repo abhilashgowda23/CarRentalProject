@@ -24,4 +24,14 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public void rentCar(Car car, Customer customer, int days, CarRentalSystem crs) {
+		if (car.isAvailable()) {
+			car.rent();
+			crs.addRental(new Rental(car, customer, days));
+			System.out.println("Rented Successfully.. Thank you!!\n");
+		} else {
+			System.out.println("Car is not Available!!!! Pls try with other vehicle");
+		}
+	}
 }
